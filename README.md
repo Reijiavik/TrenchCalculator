@@ -1,0 +1,2 @@
+# TrenchCalculator
+TrenchCrusade probability calculator
