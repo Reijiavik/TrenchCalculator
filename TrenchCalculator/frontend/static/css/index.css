@@ -1,3 +1,6 @@
+
+
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -8,3 +11,28 @@ body {
 h1 {
     color: #333;
 }
+#CabeceraFija{
+    position:sticky;
+    top: 0;
+    background-color: #333;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 100;
+
+}
+#navbar {
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+#navbar a {
+    position: relative;
+    left: 30%;
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+  }

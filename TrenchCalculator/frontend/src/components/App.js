@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import {createRoot} from "react-dom/client";
+import CabeceraFija from "./CabeceraFija";
 
 export default class App extends Component {
     constructor(props) {
@@ -6,6 +8,11 @@ export default class App extends Component {
     }
 
     render() {
-        return <h1>Testing React Code</h1>;
+        return (<h1>Testing React Code <CabeceraFija /></h1>
+        )
     }
 }
+
+const appDiv = document.getElementById("app");
+const root = createRoot(appDiv);
+root.render(<App />);
