@@ -36,3 +36,7 @@ h1 {
     padding: 14px;
     text-decoration: none;
   }
+.center {
+  text-align: center;
+  border: 3px solid green;
+}
