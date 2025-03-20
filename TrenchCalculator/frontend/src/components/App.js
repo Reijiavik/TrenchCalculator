@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import {createRoot} from "react-dom/client";
 import CabeceraFija from "./CabeceraFija";
-import Fondo from "./Fondo";
+import CalculadoraDisplay from "./CalculadoraDisplay";
 
 export default class App extends Component {
     constructor(props) {
@@ -10,21 +10,20 @@ export default class App extends Component {
 
     render() {
         return (
-        <>
         <div>
-
-        <div>
-            <h1 class="center">Testing React Code </h1>
-        </div>
-        <div > 
-            <CabeceraFija /> 
-            <div> 
-                <Fondo /> 
+            <div>
+                <h1 >TITULO </h1>
             </div>
-        </div>
+            <div > 
+                <CabeceraFija /> 
+                <div> 
+                    <div class="displayCentrado" >
+                        <CalculadoraDisplay />
+                    </div>            
+                </div>
+            </div>
 
         </div>        
-        </>  
             
         )
     }
