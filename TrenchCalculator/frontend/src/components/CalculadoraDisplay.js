@@ -24,7 +24,10 @@ export default class CalculadoraDisplay extends Component {
             dadosMinusHerir: "",
             armadura: "",
             probabilidadAcertar: 0,
-            probabilidadHerir: 0
+            probabilidadAcertarSinHerir: 0,
+            probabilidadHerir: 0,
+            probabilidadTumbar: 0,
+            probabilidadMatar: 0
         };
     }
 
@@ -34,8 +37,8 @@ export default class CalculadoraDisplay extends Component {
 
     calcularProbabilidades = () => {
         const { dadosBaseAcertar, dadosBonoAcertar, dadosMinusAcertar, covertura, dadosBaseHerir, dadosBonoHerir, dadosMinusHerir, armadura } = this.state;
-        const { probabilidadAcertar, probabilidadHerir } = calcularProbabilidades(dadosBaseAcertar, dadosBonoAcertar, dadosMinusAcertar, covertura, dadosBaseHerir, dadosBonoHerir, dadosMinusHerir, armadura);
-        this.setState({ probabilidadAcertar, probabilidadHerir });
+        const { probabilidadAcertar, probabilidadAcertarSinHerir,probabilidadHerir,probabilidadTumbar,probabilidadMatar } = calcularProbabilidades(dadosBaseAcertar, dadosBonoAcertar, dadosMinusAcertar, covertura, dadosBaseHerir, dadosBonoHerir, dadosMinusHerir, armadura);
+        this.setState({ probabilidadAcertar,probabilidadAcertarSinHerir, probabilidadHerir, probabilidadTumbar, probabilidadMatar });   
     };
 
     render() {
@@ -50,7 +53,6 @@ export default class CalculadoraDisplay extends Component {
                                 </option>
                             ))}
                         </select>
-                        <h1>Opcion: {this.state.dadosBaseAcertar}</h1>
                     </div>
                     <div>
                         <select onChange={this.handleChange('dadosBonoAcertar')}>
@@ -60,7 +62,6 @@ export default class CalculadoraDisplay extends Component {
                                 </option>
                             ))}
                         </select>
-                        <h1>Opcion: {this.state.dadosBonoAcertar}</h1>
                     </div>
                     <div>
                         <select onChange={this.handleChange('dadosMinusAcertar')}>
@@ -70,7 +71,6 @@ export default class CalculadoraDisplay extends Component {
                                 </option>
                             ))}
                         </select>
-                        <h1>Opcion: {this.state.dadosMinusAcertar}</h1>
                     </div>
                     <div>
                         <select onChange={this.handleChange('covertura')}>
@@ -80,7 +80,6 @@ export default class CalculadoraDisplay extends Component {
                                 </option>
                             ))}
                         </select>
-                        <h1>Opcion: {this.state.covertura}</h1>
                     </div>
                 </div>
                 <div className="row">
@@ -92,7 +91,6 @@ export default class CalculadoraDisplay extends Component {
                                 </option>
                             ))}
                         </select>
-                        <h1>Opcion: {this.state.dadosBaseHerir}</h1>
                     </div>
                     <div>
                         <select onChange={this.handleChange('dadosBonoHerir')}>
@@ -102,7 +100,6 @@ export default class CalculadoraDisplay extends Component {
                                 </option>
                             ))}
                         </select>
-                        <h1>Opcion: {this.state.dadosBonoHerir}</h1>
                     </div>
                     <div>
                         <select onChange={this.handleChange('dadosMinusHerir')}>
@@ -112,7 +109,6 @@ export default class CalculadoraDisplay extends Component {
                                 </option>
                             ))}
                         </select>
-                        <h1>Opcion: {this.state.dadosMinusHerir}</h1>
                     </div>
                     <div>
                         <select onChange={this.handleChange('armadura')}>
@@ -122,12 +118,15 @@ export default class CalculadoraDisplay extends Component {
                                 </option>
                             ))}
                         </select>
-                        <h1>Opcion: {this.state.armadura}</h1>
                     </div>
                 </div>
                 <div>
+
                     <h2>Probabilidad de Acertar: {this.state.probabilidadAcertar * 100}%</h2>
+                    <h2>Probabilidad de Acertar sin Herir: {this.state.probabilidadAcertarSinHerir * 100}%</h2>
                     <h2>Probabilidad de Herir: {this.state.probabilidadHerir * 100}%</h2>
+                    <h2>Probabilidad de Tumbar: {this.state.probabilidadTumbar * 100}%</h2>
+                    <h2>Probabilidad de Matar: {this.state.probabilidadMatar * 100}%</h2>
                 </div>
             </div>
         );
