@@ -8,9 +8,9 @@ export default class CabeceraFija extends Component {
     render() {
         return (
             <div class="center" id="navbar">
-                <a href="#home">Home</a>
-                <a href="#news">News</a>
-                <a href="#contact">Contact</a>
+                <a href="./">RESETEAR</a>
+                <a href="#news"></a>
+                <a href="#contact"></a>
              </div>
         )
     }
